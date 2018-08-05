@@ -1,1 +1,20 @@
 @import "components/form";
+
+#fullName-error {
+    color: red;
+}
+
+.form__donate{
+	display:inline-block;
+	position: relative;
+	}
+.form__donate input{
+	padding-left:15px;
+	}
+.form__donate:before {
+	position: absolute;
+    content:"$";
+    color: grey;
+    left:5px;
+	top:2px;
+ 	}
