@@ -1,0 +1,170 @@
+.money-message {
+    color: $color-grey-light-1;
+    background-color: $color-grey-dark-2;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    border-radius: 3px;
+
+}
+
+.money-message:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    transform: rotate(-20deg);
+    right: 20px;
+    z-index: -1;
+    top: 1rem;
+    border: 2.5rem solid $color-grey-dark-2;
+    border-color: $color-grey-dark-2 transparent transparent $color-grey-dark-2;
+}
+
+.amount-remaining {
+    font-weight: 700;
+}
+
+.countdown {
+    color: $color-red;
+    font-weight: 700;
+}
+
+.donor-num {
+    font-weight: 700;
+}
+
+
+.project {
+    border: 1px solid $color-grey-light-2;
+    border-radius: 3px;§
+
+    &__progress {
+        width: 75%;
+        height: 1.8rem;
+        background-color: $color-red;
+    }
+
+    &__message {
+        padding: 0 3rem;
+        padding-top: 1.5rem;
+        font-size: 1.4rem;
+    } 
+    
+}
+
+
+
+.form {
+
+    padding: 3rem;
+
+    ::placeholder {
+        color: $color-grey-light-3;
+    }
+
+    &__group {
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__input {
+        font-size: 1.4rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 1.1rem 1.8rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border: 1px solid $color-grey-light-2;
+        // border-bottom: 3px solid transparent;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 .5rem 1.2rem rgba(black, .1);
+            
+        }
+
+        &--medium {
+            padding: 1.8rem 2.4rem;
+            width: 40%;
+            // margin-left: 1rem;
+            // padding-left: 6rem;
+            font-size: 2rem;
+            // text-align: center;
+        }
+
+        &--large {
+            height: 15rem;
+    
+        }
+    }
+
+    &__label {
+        font-size: 1.3rem;
+        padding-top: .5rem;
+
+        &--blue {
+            color: #80C0ED;
+            font-size: 1.5rem;
+        }
+    }
+
+
+    &__donate {
+        display:inline-block;
+        position: relative;
+        margin-top: 3rem;
+
+        & input:not(:last-child) {
+            margin-right: 4rem;
+        }
+        
+        // & input {
+        //     padding-left:15px;
+        // }
+
+        &:before {
+            position: absolute;
+            content: "$";
+            color: grey;
+            left: .8rem;
+            font-size: 1.8rem;
+            // padding-right: 2rem;
+            top: 1.8rem;
+        }
+    }
+}
+
+// .donate-link {
+//     color: #80C0ED;
+//     font-size: 1.5rem;
+//     padding-top: .5rem;
+
+// }
+
+
+     
+
+
+
+
+
+
+
+
+
+// .form__donate{
+	
+// 	}
+// .form__donate input{
+	
+// 	}
+// .form__donate:before {
+	
+//      }

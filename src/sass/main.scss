@@ -1,20 +1,11 @@
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
 @import "components/form";
 
-#fullName-error {
-    color: red;
-}
-
-.form__donate{
-	display:inline-block;
-	position: relative;
-	}
-.form__donate input{
-	padding-left:15px;
-	}
-.form__donate:before {
-	position: absolute;
-    content:"$";
-    color: grey;
-    left:5px;
-	top:2px;
- 	}
+@import "pages/home";

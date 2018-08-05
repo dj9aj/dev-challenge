@@ -1,0 +1,68 @@
+.btn {
+    
+    &,
+    &:link,
+    &:visited {
+        width: 18rem;
+        text-decoration: none;
+        padding: 2.2rem 3rem;
+        display: inline-block;
+        border-radius: 3px;
+        transition: all .2s;
+        font-size: 1.6rem;
+        border: none;
+        cursor: pointer;  
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 .5rem 1rem rgba(black, .4);
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba(black, .2);
+    }
+
+    &--green {
+        background-color: $color-green;
+        color: $color-white;
+    }    
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: #80C0ED;
+        display: inline-block;
+        text-decoration: none;   
+        padding: 3px;
+        transition: all .2s ease-in;
+    }
+
+    &:hover {
+        color: #25A1FA;
+        transform: scale(1.05);
+        // box-shadow: 0 .5rem 1rem rgba(black, 0.1);
+    }
+
+    &:active {
+        box-shadow: 0 .4rem .8rem rgba(black, 0.1);
+        transform: translateY(0);
+    }
+}
+
+.submit-link {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: white;
+        display: inline-block;
+        text-decoration: none;   
+        // padding: 3px;
+        // transition: all .2s ease-in;
+    }
+}

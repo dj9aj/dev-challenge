@@ -3,7 +3,7 @@ const expiryLabel = document.querySelector('#expiry-error');
 const securityNum = document.querySelector('#security-num');
 const securityNumErr = document.querySelector('#security-num-error');
 const amountRemaining = document.querySelector('.amount-remaining');
-const valueDonated = document.querySelector('.value-donated');
+const valueDonated = document.querySelector('#value-donated');
 const labels = document.getElementsByTagName('label');
 const donor = document.querySelector('.donor-num');
 
@@ -38,11 +38,11 @@ form.addEventListener("submit", e => {
     e.preventDefault(); // Don't submit form
 
     const match = $('#expiry').val().match(/^\s*(0?[1-9]|1[0-2])\/(\d\d|\d{4})\s*$/); // Check if date format is correct
-    if (!match) {
-        e.preventDefault();
-        expiryLabel.textContent = 'Invalid Expiry Date!';
-        return;
-    }
+    // if (!match) {
+    //     e.preventDefault();
+    //     expiryLabel.textContent = 'Invalid Expiry Date!';
+    //     return;
+    // }
 
     const exp = new Date(normalizeYear(1*match[2]),1*match[1]-1,1).valueOf(); // Format year and get timestamp
     const now = new Date(); // Get current date
