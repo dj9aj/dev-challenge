@@ -10,5 +10,12 @@ label {
     color: $color-red;
     font-size: 1.3rem;
     padding-top: .5rem;
+    display: block;
+}
+
+#expiry-error {
+    color: $color-red;
+    font-size: 1.3rem;
+    padding-top: .5rem;
 }
 

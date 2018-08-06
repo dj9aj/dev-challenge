@@ -8,6 +8,7 @@
 }
 
 html {
-    font-size: 55%; // 1 rem = 10px; 10px/16px = 5%
+    // Default font size is 16px. 10/16 * 100 = 62.5%
+    font-size: 55%; // Set the font size using percentage and styled all elements using rem. App can easily be re-sized in future by changing html font size.
     box-sizing: border-box;
 }

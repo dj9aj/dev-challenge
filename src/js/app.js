@@ -7,9 +7,26 @@ const valueDonated = document.querySelector('#value-donated');
 const labels = document.getElementsByTagName('label');
 const donor = document.querySelector('.donor-num');
 
+const readStorage = () => {
+    // Get local storage and convert into object
+    const moneyStorage = JSON.parse(localStorage.getItem('money'));
+    const donarStorage = JSON.parse(localStorage.getItem('donar')); 
+
+    // Restore data from the local storage and add back to UI
+    if (moneyStorage) amountRemaining.textContent = moneyStorage;
+    if (donarStorage) donor.textContent = donarStorage;
+};
+
+const persistData = () => {
+    // Add amount remaining and donor amount to local storage
+    localStorage.setItem('money', JSON.stringify(amountRemaining.textContent));
+    localStorage.setItem('donar', JSON.stringify(donor.textContent))
+};
+
+readStorage();
 
 $(function() {
-
+    // Used jQuery validation methods to ensure input formats are correct
     $('.form').validate({
         rules: {
             email: {
@@ -38,12 +55,10 @@ form.addEventListener("submit", e => {
     e.preventDefault(); // Don't submit form
 
     const match = $('#expiry').val().match(/^\s*(0?[1-9]|1[0-2])\/(\d\d|\d{4})\s*$/); // Check if date format is correct
-    // if (!match) {
-    //     e.preventDefault();
-    //     expiryLabel.textContent = 'Invalid Expiry Date!';
-    //     return;
-    // }
-
+    if (!match) {
+        expiryLabel.textContent = 'Invalid Expiry Date';
+        return;
+    }
     const exp = new Date(normalizeYear(1*match[2]),1*match[1]-1,1).valueOf(); // Format year and get timestamp
     const now = new Date(); // Get current date
     const currMonth = new Date(now.getFullYear(),now.getMonth(),1).valueOf(); // Get timestamp of current month
@@ -66,7 +81,7 @@ form.addEventListener("submit", e => {
 });
 
 
-function normalizeYear(year) {
+const normalizeYear = year => {
     // Format year correctly
     const yearsAhead = 20;
     if (year < 100) {
@@ -100,6 +115,5 @@ const checkLabelInput = e => {
     donor.textContent = donorAmount; // Update UI
     remainAmount = remainAmount - donateVal; // Update remaining amount
     amountRemaining.textContent = remainAmount; // Update UI 
-
+    persistData(); // Update local storage
 }
-
